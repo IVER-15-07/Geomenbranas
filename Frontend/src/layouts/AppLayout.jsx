@@ -4,10 +4,12 @@ import Footer from '../components/Footer'
 
 export function AppLayout({ children }) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-white text-black">
       <Navbar />
-      <main>{children}</main>
-      <Contacto />
+      <main>
+        {children}
+        <Contacto />
+      </main>
       <Footer />
     </div>
   )

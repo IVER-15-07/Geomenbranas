@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
 const products = [
   {
@@ -39,11 +40,12 @@ const products = [
   }
 ];
 const Producto = () => {
+  useRevealOnScroll()
   return (
     <section id="productos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-enter">
           <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
             Nuestros Productos
           </h2>
@@ -57,7 +59,7 @@ const Producto = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-background border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group"
+              className="bg-background border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group animate-enter"
             >
               {/* Product Image Placeholder */}
               <div className="h-40 bg-gradient-to-br from-accent/5 to-accent/10 flex items-center justify-center group-hover:from-accent/10 group-hover:to-accent/15 transition">

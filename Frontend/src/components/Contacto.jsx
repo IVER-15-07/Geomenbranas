@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
 const Contacto = () => {
+    useRevealOnScroll()
     const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -42,7 +44,7 @@ const Contacto = () => {
      <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-enter">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Déjanos Ayudarte
           </h2>
@@ -54,7 +56,7 @@ const Contacto = () => {
         {/* Contact Info & Form */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-enter">
             <h3 className="text-3xl font-bold mb-8">Información de Contacto</h3>
 
             {/* Phone */}
@@ -105,7 +107,7 @@ const Contacto = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-8">
+          <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-8 animate-enter">
             <h3 className="text-2xl font-bold mb-6">Envía tu Consulta</h3>
 
             {submitted && (
