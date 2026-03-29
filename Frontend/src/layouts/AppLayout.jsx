@@ -1,5 +1,6 @@
 import { Navbar } from '../components/layout/Navbar'
 import Contacto from '../components/Contacto'
+import Footer from '../components/Footer'
 
 export function AppLayout({ children }) {
   return (
@@ -7,7 +8,7 @@ export function AppLayout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Contacto />
-
+      <Footer />
     </div>
   )
 }
