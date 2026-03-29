@@ -79,29 +79,40 @@
 	animation-delay: 0.6s;
 }
 
-
-@import 'tailwindcss';
-
 :root {
-  --background: #faf8f5;
-  --foreground: #1a1410;
+  /* Primary - Gris Oscuro (Profesionalismo, Solidez) */
+  --background: #f5f7fa;
+  --foreground: #2C3E50;
   --card: #ffffff;
-  --card-foreground: #1a1410;
+  --card-foreground: #2C3E50;
   --popover: #ffffff;
-  --popover-foreground: #1a1410;
-  --primary: #1a1410;
-  --primary-foreground: #faf8f5;
-  --secondary: #d4a574;
-  --secondary-foreground: #1a1410;
-  --muted: #e8e1d8;
-  --muted-foreground: #6b5f54;
-  --accent: #d4a574;
-  --accent-foreground: #1a1410;
-  --destructive: #ef4444;
-  --destructive-foreground: #faf8f5;
-  --border: #e8e1d8;
+  --popover-foreground: #2C3E50;
+  --primary: #2C3E50;
+  --primary-foreground: #ffffff;
+  
+  /* Secondary - Azul Cielo (Confianza, Tecnología) */
+  --secondary: #0088CC;
+  --secondary-foreground: #ffffff;
+  
+  /* Accent - Naranja (Energía, Atención) */
+  --accent: #FF6B35;
+  --accent-foreground: #ffffff;
+  
+  /* Neutral Colors */
+  --muted: #ecf0f5;
+  --muted-foreground: #7f8c8d;
+  
+  /* Destructive */
+  --destructive: #e74c3c;
+  --destructive-foreground: #ffffff;
+  
+  /* Additional Brand Colors */
+  --success: #27ae60;
+  --warning: #f39c12;
+  --info: #0088CC;
+  --border: #e0e6ed;
   --input: #ffffff;
-  --ring: #d4a574;
+  --ring: #FF6B35;
 }
 
 .dark {
@@ -157,6 +168,7 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply bg-background text-foreground;
   }
