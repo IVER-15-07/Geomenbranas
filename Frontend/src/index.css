@@ -80,39 +80,28 @@
 }
 
 :root {
-  /* Primary - Gris Oscuro (Profesionalismo, Solidez) */
-  --background: #f5f7fa;
-  --foreground: #2C3E50;
+  --background: #f4f8fb;
+  --foreground: #16324f;
   --card: #ffffff;
-  --card-foreground: #2C3E50;
+  --card-foreground: #16324f;
   --popover: #ffffff;
-  --popover-foreground: #2C3E50;
-  --primary: #2C3E50;
+  --popover-foreground: #16324f;
+  --primary: #16324f;
   --primary-foreground: #ffffff;
-  
-  /* Secondary - Azul Cielo (Confianza, Tecnología) */
-  --secondary: #0088CC;
+  --secondary: #0f766e;
   --secondary-foreground: #ffffff;
-  
-  /* Accent - Naranja (Energía, Atención) */
-  --accent: #FF6B35;
+  --accent: #ea6a2a;
   --accent-foreground: #ffffff;
-  
-  /* Neutral Colors */
-  --muted: #ecf0f5;
-  --muted-foreground: #7f8c8d;
-  
-  /* Destructive */
-  --destructive: #e74c3c;
+  --muted: #e8f0f6;
+  --muted-foreground: #5a7086;
+  --destructive: #d64545;
   --destructive-foreground: #ffffff;
-  
-  /* Additional Brand Colors */
-  --success: #27ae60;
-  --warning: #f39c12;
-  --info: #0088CC;
-  --border: #e0e6ed;
+  --success: #15803d;
+  --warning: #ca8a04;
+  --info: #0284c7;
+  --border: #d7e3ed;
   --input: #ffffff;
-  --ring: #FF6B35;
+  --ring: #ea6a2a;
 }
 
 .dark {

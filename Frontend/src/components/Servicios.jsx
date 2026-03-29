@@ -41,14 +41,14 @@ const services = [
 const Servicios = () => {
     useRevealOnScroll()
     return (
-        <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900">
+        <section id="servicios" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-16 animate-enter">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                <div className="text-center mb-12 sm:mb-16 animate-enter animate-delay-1">
+                    <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
                         Nuestros Servicios
                     </h2>
-                    <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
                         Soluciones completas para la instalación y reparación de membranas impermeabilizantes
                     </p>
                 </div>
@@ -60,13 +60,13 @@ const Servicios = () => {
                         return (
                             <div
                                 key={index}
-                                className="bg-white border border-white/20 rounded-xl p-6 hover:shadow-lg transition-shadow group cursor-pointer animate-enter hover:border-accent"
+                                className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl p-5 sm:p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 group cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
                             >
                                 {service.image ? (
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="mb-4 h-32 w-full rounded-lg object-cover"
+                                        className="mb-4 h-36 sm:h-32 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                 ) : (
                                     <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
@@ -80,14 +80,14 @@ const Servicios = () => {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-muted-foreground text-sm mb-4">
+                                <p className="text-slate-600 text-sm mb-4">
                                     {service.description}
                                 </p>
 
                                 {/* Features */}
                                 <ul className="space-y-2">
                                     {service.features.map((feature, idx) => (
-                                        <li key={idx} className="text-xs text-muted-foreground flex items-center gap-2">
+                                        <li key={idx} className="text-xs text-slate-600 flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
                                             {feature}
                                         </li>
@@ -99,7 +99,7 @@ const Servicios = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center mt-12 animate-enter">
+                <div className="text-center mt-10 sm:mt-12 animate-enter animate-delay-2">
                     <a
                         href="#contacto"
                         className="inline-block bg-accent hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition"

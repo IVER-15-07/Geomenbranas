@@ -34,14 +34,14 @@ Mensaje: ${formData.mensaje}`
     }
 
     return (
-        <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900 text-primary-foreground">
+        <section id="contacto" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent text-primary-foreground">
             <div className="max-w-7xl mx-auto">
 
-                <div className="text-center mb-16 animate-enter">
-                    <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <div className="text-center mb-12 sm:mb-16 animate-enter animate-delay-1">
+                    <h2 className="text-3xl sm:text-5xl font-bold mb-4">
                         Déjanos Ayudarte
                     </h2>
-                    <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg opacity-90 max-w-2xl mx-auto">
                         Contacta con nuestro equipo para una consulta gratuita
                     </p>
                 </div>
@@ -49,7 +49,7 @@ Mensaje: ${formData.mensaje}`
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                     {/* Info */}
-                    <div className="space-y-8 animate-enter">
+                    <div className="space-y-8 animate-enter-left animate-delay-1">
                         <h3 className="text-3xl font-bold mb-8">Información de Contacto</h3>
 
                         <div className="flex items-start gap-4">
@@ -85,7 +85,7 @@ Mensaje: ${formData.mensaje}`
                     </div>
 
                     {/* Formulario */}
-                    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-8 animate-enter">
+                    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 sm:p-8 animate-enter-right animate-delay-2">
                         <h3 className="text-2xl font-bold mb-6">Envía tu Consulta</h3>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
@@ -99,7 +99,7 @@ Mensaje: ${formData.mensaje}`
                                     onChange={handleChange}
                                     required
                                     placeholder="Tu nombre"
-                                    className="w-full px-4 py-3 rounded-lg"
+                                    className="w-full px-4 py-3 rounded-lg bg-white text-primary placeholder:text-muted-foreground border border-white/40 focus:outline-none focus:ring-2 focus:ring-accent/40"
                                 />
                             </div>
 
@@ -111,7 +111,7 @@ Mensaje: ${formData.mensaje}`
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="tu@email.com"
-                                    className="w-full px-4 py-3 rounded-lg"
+                                    className="w-full px-4 py-3 rounded-lg bg-white text-primary placeholder:text-muted-foreground border border-white/40 focus:outline-none focus:ring-2 focus:ring-accent/40"
                                 />
                             </div>
 
@@ -122,7 +122,7 @@ Mensaje: ${formData.mensaje}`
                                     value={formData.servicio}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 rounded-lg"
+                                    className="w-full px-4 py-3 rounded-lg bg-white text-primary border border-white/40 focus:outline-none focus:ring-2 focus:ring-accent/40"
                                 >
                                     <option value="">Selecciona</option>
                                     <option value="instalacion">Instalación</option>
@@ -140,13 +140,13 @@ Mensaje: ${formData.mensaje}`
                                     required
                                     rows={4}
                                     placeholder="Describe tu necesidad..."
-                                    className="w-full px-4 py-3 rounded-lg"
+                                    className="w-full px-4 py-3 rounded-lg bg-white text-primary placeholder:text-muted-foreground border border-white/40 focus:outline-none focus:ring-2 focus:ring-accent/40 resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-accent text-white py-3 rounded-lg"
+                                className="w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-secondary transition"
                             >
                                 Enviar por WhatsApp
                             </button>
