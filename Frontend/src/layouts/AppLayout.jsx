@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 export function AppLayout({ children }) {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white text-foreground">
       <Navbar />
       <main>
         {children}

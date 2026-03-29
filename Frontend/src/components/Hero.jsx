@@ -30,13 +30,13 @@ const Hero = () => {
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap animate-enter">
             <a
               href="#contacto"
-              className="w-full rounded-lg bg-lime-500 px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-[#0f2618] transition hover:bg-emerald-300 sm:w-auto"
+              className="w-full rounded-lg bg-accent px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition hover:bg-opacity-90 sm:w-auto"
             >
               Solicitar cotización
             </a>
             <a
               href="#servicios"
-              className="w-full rounded-lg border border-white/40 px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition hover:border-cyan-300 hover:bg-cyan-400/20 sm:w-auto"
+              className="w-full rounded-lg border-2 border-white px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-white transition hover:border-accent hover:bg-accent/10 sm:w-auto"
             >
               Ver servicios
             </a>

@@ -41,7 +41,7 @@ const Contacto = () => {
     setTimeout(() => setSubmitted(false), 5000)
   }
   return (
-     <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
+     <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900 text-primary-foreground">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-enter">
@@ -196,7 +196,7 @@ const Contacto = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:bg-opacity-90 transition mt-6"
+                className="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-3 rounded-lg transition mt-6"
               >
                 Enviar Consulta
               </button>

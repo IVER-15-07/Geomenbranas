@@ -29,12 +29,12 @@ const PorQueElegirnos = () => {
   ]
 
   return (
-    <section id="ventajas" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="ventajas" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Title and Advantages */}
           <div className="animate-enter">
-            <h2 className="text-4xl sm:text-5xl font-bold text-black mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12">
               Por qué elegirnos
             </h2>
 
@@ -42,11 +42,11 @@ const PorQueElegirnos = () => {
               {advantages.map((advantage, index) => (
                 <div key={index} className="flex items-start gap-4 animate-enter">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-rose-300">
-                      <Check size={16} className="text-rose-900" />
+                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-accent/20">
+                      <Check size={16} className="text-accent" />
                     </div>
                   </div>
-                  <p className="text-lg text-gray-800 font-medium">
+                  <p className="text-lg text-white font-medium">
                     {advantage}
                   </p>
                 </div>
@@ -59,12 +59,12 @@ const PorQueElegirnos = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-gray-100 rounded-2xl p-8 animate-enter"
+                className="bg-white/10 border border-white/20 rounded-2xl p-8 animate-enter border-l-4 border-l-accent hover:shadow-lg hover:bg-white/15 transition"
               >
-                <h3 className="text-2xl font-bold text-black mb-3">
+                <h3 className="text-2xl font-bold text-white mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-white/80 text-lg leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

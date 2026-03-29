@@ -32,14 +32,14 @@ const services = [
 const Servicios = () => {
   useRevealOnScroll()
   return (
-      <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-enter">
-          <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Nuestros Servicios
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Soluciones completas para la instalación y reparación de membranas impermeabilizantes
           </p>
         </div>
@@ -51,7 +51,7 @@ const Servicios = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow group cursor-pointer animate-enter"
+                className="bg-white border border-white/20 rounded-xl p-6 hover:shadow-lg transition-shadow group cursor-pointer animate-enter hover:border-accent"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
@@ -86,7 +86,7 @@ const Servicios = () => {
         <div className="text-center mt-12 animate-enter">
           <a
             href="#contacto"
-            className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition"
+            className="inline-block bg-accent hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition"
           >
             Solicitar Presupuesto
           </a>
