@@ -1,5 +1,6 @@
 
 import { Wrench, RotateCcw, CheckCircle, Shield } from 'lucide-react';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
 const services = [
   {
@@ -29,11 +30,13 @@ const services = [
 ];
 
 const Servicios = () => {
+  useRevealOnScroll()
+
   return (
-      <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section id="servicios" className="py-20 px-4 sm:px-6 lg:px-8 bg-background animate-enter">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-enter animate-delay-1">
           <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
             Nuestros Servicios
           </h2>
@@ -49,7 +52,7 @@ const Servicios = () => {
             return (
               <div
                 key={index}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow group cursor-pointer"
+                className={`bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow group cursor-pointer ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
               >
                 {/* Icon */}
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
@@ -81,7 +84,7 @@ const Servicios = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 animate-enter animate-delay-2">
           <a
             href="#contacto"
             className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition"

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
 const products = [
   {
@@ -39,11 +40,13 @@ const products = [
   }
 ];
 const Producto = () => {
+  useRevealOnScroll()
+
   return (
-    <section id="productos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="productos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white animate-enter">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-enter animate-delay-1">
           <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
             Nuestros Productos
           </h2>
@@ -57,7 +60,7 @@ const Producto = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-background border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group"
+              className={`bg-background border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : index === 3 ? 'animate-delay-1' : index === 4 ? 'animate-delay-2' : 'animate-delay-3'}`}
             >
               {/* Product Image Placeholder */}
               <div className="h-40 bg-gradient-to-br from-accent/5 to-accent/10 flex items-center justify-center group-hover:from-accent/10 group-hover:to-accent/15 transition">
@@ -102,7 +105,7 @@ const Producto = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-enter animate-delay-2">
           <p className="text-muted-foreground mb-4">¿No encuentras lo que buscas?</p>
           <a
             href="#contacto"
