@@ -1,11 +1,13 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
+import geomenbranaHDPEImage from '../assets/images/productos/menbranaHDPE.jpg'
 
 const products = [
   {
     name: 'Membrana HDPE Premium',
     type: 'HDPE Geomembrana',
     specs: ['Alta densidad', '1.5mm - 3mm espesor', 'Resistencia UV'],
-    applications: 'Techos, estructuras, superficies'
+    applications: 'Techos, estructuras, superficies',
+    image: geomenbranaHDPEImage,
   },
   {
     name: 'Membrana PVC Flexible',
@@ -60,13 +62,20 @@ const Producto = () => {
               key={index}
               className="bg-white border border-white/20 rounded-xl overflow-hidden hover:shadow-lg hover:border-accent transition-all group animate-enter"
             >
-              {/* Product Image Placeholder */}
-              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent/20 mb-2">{index + 1}</div>
-                  <p className="text-accent/40 text-xs font-semibold">{product.type}</p>
+              {product.image ? (
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-40 w-full object-cover"
+                />
+              ) : (
+                <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-accent/20 mb-2">{index + 1}</div>
+                    <p className="text-accent/40 text-xs font-semibold">{product.type}</p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Content */}
               <div className="p-6">
