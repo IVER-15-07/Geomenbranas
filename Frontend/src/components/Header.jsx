@@ -1,11 +1,13 @@
+
+
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
-export function Navbar() {
-	 const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	return (
-		<header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-muted shadow-md z-50">
+  return (
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-muted shadow-md z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -60,9 +62,6 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </header> 	
-	)
+    </header>
+  );
 }
-
-
-
