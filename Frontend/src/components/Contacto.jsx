@@ -30,7 +30,7 @@ const Contacto = () => {
 
                     {/* Info */}
                     <div className="space-y-6 animate-enter-left animate-delay-1">
-                        <h3 className="text-3xl font-bold mb-6">Información de Contacto</h3>
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-6">Información de Contacto</h3>
 
                         <div className="flex items-start gap-4">
                             <div className="w-12 h-12 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
@@ -47,9 +47,9 @@ const Contacto = () => {
                             <div className="w-12 h-12 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
                                 <Mail size={24} />
                             </div>
-                            <div>
+                            <div className="min-w-0">
                                 <h4 className="font-bold text-lg mb-1">Email</h4>
-                                <p className="opacity-90">jorgegonzalomunozjerez05@gmail.com</p>
+                                <p className="opacity-90 break-all">jorgegonzalomunozjerez05@gmail.com</p>
                             </div>
                         </div>
 

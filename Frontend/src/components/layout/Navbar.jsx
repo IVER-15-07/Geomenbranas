@@ -76,13 +76,13 @@ export function Navbar() {
 
 	return (
   <header className="fixed top-0 w-full bg-[#12395b]/88 border-b border-white/15 backdrop-blur-md z-50 shadow-lg shadow-[#091b2a]/30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="w-10 h-10 bg-[#e9783b] rounded-lg flex items-center justify-center shrink-0">
             <span className="text-white font-extrabold text-sm">GM</span>
           </div>
-          <span className="text-white font-bold text-base sm:text-lg truncate">SOLUCIONES MUÑOZ</span>
+          <span className="text-white font-bold text-sm sm:text-base lg:text-lg truncate">SOLUCIONES MUÑOZ</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -100,10 +100,10 @@ export function Navbar() {
         </div>
 
         {/* CTA Button & Mobile Menu */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           <a
-            href="tel:+1-555-123-4567"
-            className="hidden sm:flex items-center gap-2 bg-[#e9783b] text-white px-4 py-2 rounded-lg hover:bg-[#f08a54] transition font-semibold text-sm"
+            href="tel:+56950049625"
+            className="hidden lg:flex items-center gap-2 bg-[#e9783b] text-white px-4 py-2 rounded-lg hover:bg-[#f08a54] transition font-semibold text-sm"
           >
             <Phone size={18} />
             <span>Llamar</span>
@@ -112,6 +112,7 @@ export function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 hover:bg-white/15 rounded-lg transition text-white"
+            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -136,7 +137,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="tel:+1-555-123-4567"
+              href="tel:+56950049625"
               className="flex items-center gap-2 bg-[#e9783b] text-white px-4 py-2 rounded-lg hover:bg-[#f08a54] transition font-semibold mt-2"
             >
               <Phone size={18} />

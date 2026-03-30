@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-primary/80 backdrop-blur-sm text-primary-foreground py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-primary-foreground/20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 pb-8 border-b border-primary-foreground/20">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -47,9 +47,9 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Contacto Rápido</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="tel:+1-555-123-4567" className="hover:opacity-100 transition">+1 (555) 123-4567</a></li>
-              <li><a href="mailto:info@promembranes.com" className="hover:opacity-100 transition">info@promembranes.com</a></li>
-              <li><p>Miami, FL 33101</p></li>
+              <li><a href="tel:+56950049625" className="hover:opacity-100 transition">+56 9 5004 9625</a></li>
+              <li><a href="mailto:jorgegonzalomunozjerez05@gmail.com" className="hover:opacity-100 transition break-all">jorgegonzalomunozjerez05@gmail.com</a></li>
+              <li><p>Santiago, Chile</p></li>
               <li><p className="text-xs">Disponible 24/7</p></li>
             </ul>
           </div>
@@ -58,8 +58,8 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
-          <p className="text-sm opacity-75">
-            © {currentYear} ProMembranes. Todos los derechos reservados.
+          <p className="text-sm opacity-75 text-center md:text-left">
+            © {currentYear} Soluciones Muñoz. Todos los derechos reservados.
           </p>
 
           {/* Social Links */}
@@ -89,7 +89,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://wa.me/59168458460"
+              href="https://wa.me/56950049625"
               target="_blank"
               rel="noreferrer"
               className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition"
@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
 
           {/* Additional Links */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center justify-center md:justify-end flex-wrap gap-x-6 gap-y-2 text-sm">
             <a href="#" className="hover:opacity-75 transition">Política de Privacidad</a>
             <a href="#" className="hover:opacity-75 transition">Términos de Servicio</a>
           </div>

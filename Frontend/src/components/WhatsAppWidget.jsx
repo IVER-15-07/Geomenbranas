@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { X } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 
-const WHATSAPP_NUMBER = '59168458460'
+const WHATSAPP_NUMBER = '56 9 5004 9625'
+
+const getWhatsAppPhone = (phone) => phone.replace(/\D/g, '')
 
 export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,15 +13,16 @@ export function WhatsAppWidget() {
   const openWhatsApp = () => {
     const finalMessage = message.trim() || 'Hola, quiero más información sobre sus servicios.'
     const encoded = encodeURIComponent(finalMessage)
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank')
+    const phone = getWhatsAppPhone(WHATSAPP_NUMBER)
+    window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank')
     setMessage('')
     setIsOpen(false)
   }
 
   return (
-    <div className="fixed bottom-5 right-4 z-70 sm:bottom-6 sm:right-6">
+    <div className="fixed bottom-4 right-3 z-70 sm:bottom-6 sm:right-6">
       {isOpen && (
-        <div className="mb-3 w-75 max-w-[calc(100vw-1.5rem)] overflow-hidden rounded-2xl border border-black/10 bg-[#edf3f1] shadow-2xl shadow-slate-900/35 sm:w-80">
+        <div className="mb-3 w-[19rem] max-w-[calc(100vw-1rem)] overflow-hidden rounded-2xl border border-black/10 bg-[#edf3f1] shadow-2xl shadow-slate-900/35 sm:w-80">
           <div className="flex items-center justify-between bg-[#25d366] px-4 py-3 text-white">
             <div className="flex items-center gap-3">
               <FaWhatsapp size={24} />
