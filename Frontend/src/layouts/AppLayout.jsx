@@ -1,6 +1,7 @@
 import { Navbar } from '../components/layout/Navbar'
 import Contacto from '../components/Contacto'
 import Footer from '../components/Footer'
+import { WhatsAppWidget } from '../components/WhatsAppWidget'
 import bg from '../assets/images/bg.jpg'
 
 export function AppLayout({ children }) {
@@ -23,6 +24,8 @@ export function AppLayout({ children }) {
       <div className="relative z-10">
         <Footer />
       </div>
+
+      <WhatsAppWidget />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,9 +12,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold">PM</span>
+                <span className="text-accent-foreground font-bold">GM</span>
               </div>
-              <span className="font-bold text-lg">ProMembranes</span>
+              <span className="font-bold text-lg">SOLUCIONES MUÑOZ</span>
             </div>
             <p className="text-sm opacity-80">
               Líderes en soluciones de impermeabilización y membranas de calidad premium.
@@ -64,18 +64,45 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition">
+            <a
+              href="https://www.facebook.com/share/18VJEaN1qS/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition"
+            >
               <FaFacebook size={20} />
             </a>
+
+            {/*
             <a href="#" className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition">
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition">
+            */}
+
+            <a
+              href="https://www.instagram.com/jorgemunozjerez?igsh=MW1uYmQydWRydXdxZQ=="
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition"
+            >
               <FaInstagram size={20} />
             </a>
+
+            <a
+              href="https://wa.me/59168458460"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition"
+            >
+              <FaWhatsapp size={20} />
+            </a>
+
+            {/*
             <a href="#" className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition">
               <FaLinkedin size={20} />
             </a>
+            */}
+
           </div>
 
           {/* Additional Links */}

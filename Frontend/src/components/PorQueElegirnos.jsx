@@ -9,7 +9,7 @@ const PorQueElegirnos = () => {
     'Materiales de primera calidad con garantía',
     'Instalación conforme a normas internacionales',
     'Atención personalizada y asesoría técnica',
-    'Garantía de 5 años en instalación',
+    'Garantía de 2 años en instalación',
     'Disponibilidad de servicio 24/7'
   ]
 
