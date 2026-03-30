@@ -44,6 +44,22 @@ export function Navbar() {
     }
   }, [])
 
+  useEffect(() => {
+    const syncWithHash = () => {
+      const currentHash = window.location.hash.replace('#', '')
+      if (currentHash && navLinks.some((link) => link.id === currentHash)) {
+        setActiveSection(currentHash)
+      }
+    }
+
+    syncWithHash()
+    window.addEventListener('hashchange', syncWithHash)
+
+    return () => {
+      window.removeEventListener('hashchange', syncWithHash)
+    }
+  }, [])
+
   const getDesktopLinkClass = (id) =>
     `rounded-md px-3 py-1.5 text-sm font-semibold transition ${
       activeSection === id
@@ -72,7 +88,12 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3">
           {navLinks.map((link) => (
-            <a key={link.id} href={`#${link.id}`} className={getDesktopLinkClass(link.id)}>
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={getDesktopLinkClass(link.id)}
+              onClick={() => setActiveSection(link.id)}
+            >
               {link.label}
             </a>
           ))}
@@ -106,7 +127,10 @@ export function Navbar() {
                 key={link.id}
                 href={`#${link.id}`}
                 className={getMobileLinkClass(link.id)}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setActiveSection(link.id)
+                  setIsMenuOpen(false)
+                }}
               >
                 {link.label}
               </a>
