@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 
@@ -43,9 +42,6 @@ const Hero = () => {
       emblaApi.off('select', onSelect)
     }
   }, [emblaApi])
-
-  const scrollPrev = () => emblaApi?.scrollPrev()
-  const scrollNext = () => emblaApi?.scrollNext()
 
   // Auto-play del carrusel
   useEffect(() => {
@@ -118,22 +114,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Botones de navegación */}
-      <button
-        onClick={scrollPrev}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-2 backdrop-blur transition hover:bg-white/30 sm:left-8"
-        aria-label="Slide anterior"
-      >
-        <ChevronLeft className="h-6 w-6 text-white" />
-      </button>
-      <button
-        onClick={scrollNext}
-        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-2 backdrop-blur transition hover:bg-white/30 sm:right-8"
-        aria-label="Slide siguiente"
-      >
-        <ChevronRight className="h-6 w-6 text-white" />
-      </button>
 
       {/* Indicadores (dots) */}
       <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
