@@ -5,7 +5,7 @@ const products = [
   {
     name: 'Membrana HDPE Premium',
     type: 'HDPE Geomembrana',
-    specs: ['Alta densidad', '1.5mm - 3mm espesor', 'Resistencia UV'],
+    specs: ['Alta densidad', '1mm - 3mm espesor', 'Resistencia UV'],
     applications: 'Techos, estructuras, superficies',
     image: geomenbranaHDPEImage,
   },
@@ -15,18 +15,15 @@ const products = [
     specs: ['Mayor flexibilidad', '0.5mm - 2mm espesor', 'Instalación rápida'],
     applications: 'Muros, piscinas, depósitos'
   },
-  {
-    name: 'Membrana LDPE Económica',
-    type: 'LDPE Geomembrana',
-    specs: ['Baja densidad', '0.5mm - 1.5mm espesor', 'Económica'],
-    applications: 'Proyectos residenciales'
-  },
-  {
-    name: 'Membrana Compuesta',
-    type: 'Composite Geomembrana',
-    specs: ['Doble capa', 'Máxima durabilidad', 'Aplicación profesional'],
-    applications: 'Proyectos comerciales y industriales'
-  },
+  //
+  // {
+  // name: 'Membrana LDPE Económica',
+  // type: 'LDPE Geomembrana',
+  //specs: ['Baja densidad', '0.5mm - 1.5mm espesor', 'Económica'],
+  //applications: 'Proyectos residenciales'
+  // },
+  //
+ 
   {
     name: 'Sellador De Juntas',
     type: 'Soldadura Profesional',

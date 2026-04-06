@@ -5,12 +5,14 @@ const Contacto = () => {
     useRevealOnScroll()
 
     const zonas = [
-        'Santiago Centro',
-        'Maipú',
-        'Puente Alto',
-        'La Florida',
-        'Las Condes',
-        'Providencia',
+       
+        'San Pedro (Melipilla)',
+        'Cocalan (Sexta Region )',
+        'San Enrique (Quinta Region)',
+        'Nihue (Metropolitana)',
+        'Loencañado (Metropolitana)',
+        'Metropolitana (Santiago)',
+      
     ]
 
     return (
