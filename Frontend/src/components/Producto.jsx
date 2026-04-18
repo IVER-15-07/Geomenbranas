@@ -1,5 +1,9 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
 import geomenbranaHDPEImage from '../assets/images/productos/menbranaHDPE.jpg'
+import geomenbranaPVCImage from '../assets/images/productos/menbranasPVC.jpg'
+import TextInitial from '../assets/images/productos/textil.jpg'
+import selladorJuntasImage from '../assets/images/productos/sellador.jpg'
+
 
 const products = [
   {
@@ -13,7 +17,8 @@ const products = [
     name: 'Membrana PVC Flexible',
     type: 'PVC Especializada',
     specs: ['Mayor flexibilidad', '0.5mm - 2mm espesor', 'Instalación rápida'],
-    applications: 'Muros, piscinas, depósitos'
+    applications: 'Muros, piscinas, depósitos',
+    image: geomenbranaPVCImage,
   },
   //
   // {
@@ -23,18 +28,22 @@ const products = [
   //applications: 'Proyectos residenciales'
   // },
   //
- 
+  
   {
     name: 'Sellador De Juntas',
     type: 'Soldadura Profesional',
     specs: ['Termofusión', 'Soldadura por calor', 'Sellado permanente'],
-    applications: 'Unión de membranas'
+    applications: 'Unión de membranas',
+    image: selladorJuntasImage,
   },
+
   {
     name: 'Geotextil Protector',
     type: 'Material de Protección',
     specs: ['Capa protectora', 'Anti-rasgaduras', 'Drenaje'],
-    applications: 'Base y acabados'
+    applications: 'Base y acabados',
+    image: TextInitial,
+
   }
 ];
 const Producto = () => {

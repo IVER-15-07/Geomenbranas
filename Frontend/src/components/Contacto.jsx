@@ -61,22 +61,22 @@ const Contacto = () => {
                             </div>
                             <div>
                                 <h4 className="font-bold text-lg mb-1">Ubicación</h4>
-                                <p className="opacity-90">SANTIAGO, CHILE</p>
+                                <p className="opacity-90">San Pedro, Melipilla, Chile</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Cobertura */}
                     <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 sm:p-8 animate-enter-right animate-delay-2">
-                        <h3 className="text-2xl font-bold mb-4">Zonas de trabajo en Santiago</h3>
+                        <h3 className="text-2xl font-bold mb-4">Zonas de trabajo y cobertura</h3>
                         <p className="text-sm sm:text-base text-white/85 mb-5">
-                            Actualmente atendemos proyectos en la Región Metropolitana, con foco en comunas de Santiago.
+                            Trabajamos en la Región Metropolitana y sectores cercanos, con cobertura flexible según proyecto.
                         </p>
 
                         <div className="overflow-hidden rounded-xl border border-white/20 bg-white/5 mb-5">
                             <iframe
-                                title="Mapa de cobertura en Santiago de Chile"
-                                src="https://www.google.com/maps?q=Santiago%20de%20Chile&output=embed"
+                                title="Mapa de cobertura en San Pedro y Melipilla"
+                                src="https://www.google.com/maps?q=San%20Pedro%2C%20Melipilla%2C%20Chile&output=embed"
                                 className="h-60 w-full"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
