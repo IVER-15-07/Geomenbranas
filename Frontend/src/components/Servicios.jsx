@@ -54,19 +54,21 @@ const Servicios = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         return (
                             <div
                                 key={index}
-                                className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl p-5 sm:p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 group cursor-pointer hover:-translate-y-1.5 hover:scale-[1.01] hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
+                                className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl p-5 sm:p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 group cursor-pointer hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
                             >
                                 {service.image ? (
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="mb-4 h-36 sm:h-32 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="mb-4 h-36 sm:h-32 lg:h-36 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 ) : (
                                     <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 
 const navLinks = [
@@ -15,8 +15,10 @@ const aboutLinks = [
 const sectionLinks = [...navLinks, ...aboutLinks]
 
 export function Navbar() {
-	 const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAboutMenuOpen, setIsAboutMenuOpen] = useState(false)
    const [activeSection, setActiveSection] = useState('servicios')
+  const aboutMenuRef = useRef(null)
 
   useEffect(() => {
     const sections = sectionLinks
@@ -47,6 +49,28 @@ export function Navbar() {
 
     return () => {
       observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (aboutMenuRef.current && !aboutMenuRef.current.contains(event.target)) {
+        setIsAboutMenuOpen(false)
+      }
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsAboutMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleEscape)
     }
   }, [])
 
@@ -82,9 +106,9 @@ export function Navbar() {
 
   const isAboutActive = aboutLinks.some((link) => link.id === activeSection)
 
-	return (
-  <header className="fixed top-0 w-full bg-[#12395b]/88 border-b border-white/15 backdrop-blur-md z-50 shadow-lg shadow-[#091b2a]/30">
-      <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+  return (
+    <header className="fixed top-0 w-full bg-[#12395b]/88 border-b border-white/15 backdrop-blur-md z-50 shadow-lg shadow-[#091b2a]/30">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8 py-3 flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="w-10 h-10 bg-[#e9783b] rounded-lg flex items-center justify-center shrink-0">
@@ -94,7 +118,7 @@ export function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-2 lg:gap-3">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -106,7 +130,7 @@ export function Navbar() {
             </a>
           ))}
 
-          <div className="relative group">
+          <div ref={aboutMenuRef} className="relative">
             <button
               type="button"
               className={`rounded-md px-3 py-1.5 text-sm font-semibold transition inline-flex items-center gap-1 ${
@@ -115,18 +139,23 @@ export function Navbar() {
                   : 'text-white/85 hover:bg-white/10 hover:text-white'
               }`}
               aria-haspopup="true"
+              aria-expanded={isAboutMenuOpen}
+              onClick={() => setIsAboutMenuOpen((prev) => !prev)}
             >
               Nosotros
-              <ChevronDown size={16} />
+              <ChevronDown size={16} className={isAboutMenuOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
             </button>
 
-            <div className="invisible absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-white/20 bg-[#12395b] p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className={`${isAboutMenuOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'} absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-white/20 bg-[#12395b] p-2 shadow-lg transition`}>
               {aboutLinks.map((link) => (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
                   className={getMobileLinkClass(link.id)}
-                  onClick={() => setActiveSection(link.id)}
+                  onClick={() => {
+                    setActiveSection(link.id)
+                    setIsAboutMenuOpen(false)
+                  }}
                 >
                   {link.label}
                 </a>
@@ -139,7 +168,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           <a
             href="tel:+56950049625"
-            className="hidden lg:flex items-center gap-2 bg-[#e9783b] text-white px-4 py-2 rounded-lg hover:bg-[#f08a54] transition font-semibold text-sm"
+            className="hidden xl:flex items-center gap-2 bg-[#e9783b] text-white px-4 py-2 rounded-lg hover:bg-[#f08a54] transition font-semibold text-sm"
           >
             <Phone size={18} />
             <span>Llamar</span>
@@ -147,8 +176,9 @@ export function Navbar() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-white/15 rounded-lg transition text-white"
+            className="lg:hidden p-2 hover:bg-white/15 rounded-lg transition text-white"
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -157,7 +187,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-white/15 bg-[#12395b]">
+        <div className="lg:hidden border-t border-white/15 bg-[#12395b]">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
@@ -205,8 +235,8 @@ export function Navbar() {
           </div>
         </div>
       )}
-	  </header>
-	)
+    </header>
+  )
 }
 
 

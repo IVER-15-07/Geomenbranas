@@ -48,6 +48,8 @@ const products = [
 ];
 const Producto = () => {
   useRevealOnScroll()
+  const whatsappBase = 'https://wa.me/56950049625'
+
   return (
     <section id="productos" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
@@ -62,20 +64,22 @@ const Producto = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {products.map((product, index) => (
             <div
               key={index}
-              className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl overflow-hidden shadow-lg shadow-slate-900/10 transition-all duration-300 group hover:-translate-y-1.5 hover:scale-[1.01] hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : index === 3 ? 'animate-delay-1' : index === 4 ? 'animate-delay-2' : 'animate-delay-3'}`}
+              className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl overflow-hidden shadow-lg shadow-slate-900/10 transition-all duration-300 group hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : index === 3 ? 'animate-delay-1' : index === 4 ? 'animate-delay-2' : 'animate-delay-3'}`}
             >
               {product.image ? (
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : (
-                <div className="h-40 bg-linear-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition">
+                <div className="h-32 bg-linear-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-accent/20 mb-2">{index + 1}</div>
                     <p className="text-accent/40 text-xs font-semibold">{product.type}</p>
@@ -84,16 +88,16 @@ const Producto = () => {
               )}
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2">
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-primary mb-2 leading-tight">
                   {product.name}
                 </h3>
 
-                <div className="mb-4">
+                <div className="mb-3">
                   <p className="text-xs font-semibold text-accent mb-3">ESPECIFICACIONES</p>
                   <ul className="space-y-1">
                     {product.specs.map((spec, idx) => (
-                      <li key={idx} className="text-sm text-slate-600 flex items-center gap-2">
+                      <li key={idx} className="text-[0.92rem] text-slate-600 flex items-center gap-2">
                         <span className="w-1 h-1 bg-accent rounded-full"></span>
                         {spec}
                       </li>
@@ -101,17 +105,22 @@ const Producto = () => {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-border">
+                <div className="pt-3 border-t border-border">
                   <p className="text-xs font-semibold text-accent mb-2">APLICACIONES</p>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-[0.92rem] text-slate-600">
                     {product.applications}
                   </p>
                 </div>
 
                 {/* CTA */}
-                <button className="w-full mt-4 bg-accent text-white py-2 rounded-lg font-semibold hover:bg-secondary transition text-sm shadow-sm hover:shadow-md">
+                <a
+                  href={`${whatsappBase}?text=${encodeURIComponent(`Hola, quiero mas informacion sobre ${product.name}`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full mt-4 bg-accent text-white py-2 rounded-lg font-semibold hover:bg-secondary transition text-sm shadow-sm hover:shadow-md text-center"
+                >
                   Más Información
-                </button>
+                </a>
               </div>
             </div>
           ))}

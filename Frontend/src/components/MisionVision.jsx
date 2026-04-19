@@ -25,29 +25,38 @@ const MisionVision = () => {
   }
 
   return (
-    <section id="mision-vision" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-primary to-slate-900">
+    <section id="mision-vision" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="text-center mb-12 sm:mb-16 animate-enter animate-delay-1">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+            Misión y Visión
+          </h2>
+          <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
+            Trabajamos con propósito claro y una proyección de crecimiento sostenible para cada cliente.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Misión */}
-          <div className="animate-enter">
+          <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8 animate-enter-left animate-delay-1">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-1 bg-accent rounded-full" />
-              <h2 className="text-4xl sm:text-5xl font-bold text-white">
+              <div className="w-10 h-1 bg-accent rounded-full" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
                 {mision.title}
-              </h2>
+              </h3>
             </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
+            <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-8">
               {mision.description}
             </p>
             <div className="space-y-4">
               {mision.points.map((point, index) => (
                 <div key={index} className="flex items-start gap-3 animate-enter">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <div className="flex items-center justify-center h-5 w-5 rounded-full bg-accent/20">
                       <Check size={16} className="text-accent" strokeWidth={3} />
                     </div>
                   </div>
-                  <p className="text-white font-medium text-lg">
+                  <p className="text-white font-medium text-base sm:text-lg">
                     {point}
                   </p>
                 </div>
@@ -56,25 +65,25 @@ const MisionVision = () => {
           </div>
 
           {/* Visión */}
-          <div className="animate-enter">
+          <div className="bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8 animate-enter-right animate-delay-2">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-1 bg-accent rounded-full" />
-              <h2 className="text-4xl sm:text-5xl font-bold text-white">
+              <div className="w-10 h-1 bg-accent rounded-full" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
                 {vision.title}
-              </h2>
+              </h3>
             </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
+            <p className="text-white/85 text-base sm:text-lg leading-relaxed mb-8">
               {vision.description}
             </p>
             <div className="space-y-4">
               {vision.points.map((point, index) => (
                 <div key={index} className="flex items-start gap-3 animate-enter">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <div className="flex items-center justify-center h-5 w-5 rounded-full bg-accent/20">
                       <Check size={16} className="text-accent" strokeWidth={3} />
                     </div>
                   </div>
-                  <p className="text-white font-medium text-lg">
+                  <p className="text-white font-medium text-base sm:text-lg">
                     {point}
                   </p>
                 </div>

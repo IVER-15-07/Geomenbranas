@@ -17,7 +17,7 @@ const Contacto = () => {
 
     return (
         <section id="contacto" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent text-primary-foreground">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
 
                 <div className="text-center mb-12 sm:mb-16 animate-enter animate-delay-1">
                     <h2 className="text-3xl sm:text-5xl font-bold mb-4">
@@ -67,8 +67,8 @@ const Contacto = () => {
                     </div>
 
                     {/* Cobertura */}
-                    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-6 sm:p-8 animate-enter-right animate-delay-2">
-                        <h3 className="text-2xl font-bold mb-4">Zonas de trabajo y cobertura</h3>
+                    <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-2xl p-5 sm:p-7 lg:p-8 animate-enter-right animate-delay-2">
+                        <h3 className="text-xl sm:text-2xl font-bold mb-4">Zonas de trabajo y cobertura</h3>
                         <p className="text-sm sm:text-base text-white/85 mb-5">
                             Trabajamos en la Región Metropolitana y sectores cercanos, con cobertura flexible según proyecto.
                         </p>
@@ -77,7 +77,7 @@ const Contacto = () => {
                             <iframe
                                 title="Mapa de cobertura en San Pedro y Melipilla"
                                 src="https://www.google.com/maps?q=San%20Pedro%2C%20Melipilla%2C%20Chile&output=embed"
-                                className="h-60 w-full"
+                                className="h-52 sm:h-60 w-full"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
