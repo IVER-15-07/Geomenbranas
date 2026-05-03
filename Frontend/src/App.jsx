@@ -11,8 +11,8 @@ function App() {
       <Hero />
       <Servicios />
       <Productos />
-      <MisionVision />
       <PorQueElegirnos />
+      <MisionVision />
     </AppLayout>
   )
 }

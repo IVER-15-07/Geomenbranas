@@ -80,50 +80,60 @@
 }
 
 :root {
-  --background: #f4f8fb;
-  --foreground: #16324f;
+  --background: #ffffff;
+  --foreground: #0b2b45;
   --card: #ffffff;
-  --card-foreground: #16324f;
+  --card-foreground: #0b2b45;
   --popover: #ffffff;
-  --popover-foreground: #16324f;
-  --primary: #16324f;
+  --popover-foreground: #0b2b45;
+  --primary: #0b3a66; /* más profundo y profesional */
   --primary-foreground: #ffffff;
-  --secondary: #0f766e;
+  --secondary: #0fa3a0; /* acento frío complementario */
   --secondary-foreground: #ffffff;
-  --accent: #ea6a2a;
+  --accent: #ff6a00; /* naranja más vivo */
   --accent-foreground: #ffffff;
-  --muted: #e8f0f6;
+  --muted: #e9f3f8;
   --muted-foreground: #5a7086;
   --destructive: #d64545;
   --destructive-foreground: #ffffff;
   --success: #15803d;
-  --warning: #ca8a04;
+  --warning: #ffb020;
   --info: #0284c7;
   --border: #d7e3ed;
   --input: #ffffff;
-  --ring: #ea6a2a;
+  --ring: #ff6a00;
+  --whatsapp: #25d366;
+  /* Hero overlay colors (used only in hero section) */
+  --hero-start: rgba(12, 37, 66, 0.38);
+  --hero-mid: rgba(16, 59, 81, 0.24);
+  --hero-end: rgba(19, 94, 90, 0.12);
 }
 
 .dark {
-  --background: #0f0d0a;
-  --foreground: #faf8f5;
-  --card: #1a1410;
-  --card-foreground: #faf8f5;
-  --popover: #1a1410;
-  --popover-foreground: #faf8f5;
-  --primary: #faf8f5;
-  --primary-foreground: #1a1410;
-  --secondary: #d4a574;
-  --secondary-foreground: #0f0d0a;
-  --muted: #3d3531;
-  --muted-foreground: #a89885;
-  --accent: #d4a574;
-  --accent-foreground: #1a1410;
+  --background: #0b0f12;
+  --foreground: #f7f7f7;
+  --card: #0f1720;
+  --card-foreground: #f7f7f7;
+  --popover: #0f1720;
+  --popover-foreground: #f7f7f7;
+  --primary: #e6eef8; /* texto/elementos claros sobre fondo oscuro */
+  --primary-foreground: #0b2b45;
+  --secondary: #0fa3a0;
+  --secondary-foreground: #0b0f12;
+  --muted: #16202a;
+  --muted-foreground: #9aa8b3;
+  --accent: #ff8a42; /* naranja vivo en modo oscuro */
+  --accent-foreground: #0b0f12;
   --destructive: #f87171;
-  --destructive-foreground: #1a1410;
-  --border: #3d3531;
-  --input: #1a1410;
-  --ring: #d4a574;
+  --destructive-foreground: #0b0f12;
+  --border: #14232d;
+  --input: #071018;
+  --ring: #ff8a42;
+  --whatsapp: #25d366;
+  /* Hero overlay colors (modo oscuro) */
+  --hero-start: rgba(4, 10, 14, 0.46);
+  --hero-mid: rgba(6, 28, 38, 0.30);
+  --hero-end: rgba(8, 38, 36, 0.16);
 }
 
 @theme {
@@ -162,3 +172,103 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Unificar todas las secciones con el mismo fondo del Hero */
+section:not(#inicio) {
+  position: relative;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+section:not(#inicio)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 26, 44, 0.36) 0%,
+    rgba(8, 30, 50, 0.22) 22%,
+    rgba(8, 30, 50, 0.10) 45%,
+    rgba(8, 30, 50, 0.04) 100%
+  );
+}
+
+section:not(#inicio) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero panel: tarjeta semi-transparente sobre la imagen */
+#inicio .max-w-2xl {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Mejorar legibilidad solo en encabezados de sección (no en todo el contenido) */
+section:not(#inicio) .text-center > h2,
+section:not(#inicio) .text-center > .section-title {
+  color: #f4f8fc !important;
+  font-weight: 900;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.36);
+}
+
+section:not(#inicio) .text-center > p,
+section:not(#inicio) .text-center > .section-lead {
+  color: rgba(237, 245, 252, 0.9) !important;
+}
+
+.card h2,
+.card h3 {
+  color: var(--primary) !important;
+  text-shadow: none !important;
+}
+
+.card p {
+  color: var(--muted-foreground) !important;
+}
+
+.card li {
+  color: var(--muted-foreground) !important;
+}
+
+/* Clase para tarjetas (cards) */
+.card {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+/* CTA primary: asegurar contraste y sombra ligera */
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.text-foreground { color: var(--foreground) !important; }
+.text-muted-foreground { color: var(--muted-foreground) !important; }
+
+/* Tipografía base para mejor experiencia de lectura */
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.12;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+h1 { font-size: clamp(1.75rem, 2.5vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 2vw, 2rem); }
+h3 { font-size: clamp(1.25rem, 1.5vw, 1.125rem); }
+
+/* Reduce letter-spacing for nav and important texts */
+.text-sm, .text-base, .text-lg, .text-3xl, h1, h2, h3 {
+  letter-spacing: 0px !important;
+}
+

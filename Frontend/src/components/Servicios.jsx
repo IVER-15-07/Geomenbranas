@@ -41,48 +41,49 @@ const services = [
 const Servicios = () => {
     useRevealOnScroll()
     return (
-        <section id="servicios" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
+        <section id="servicios" className="-mt-1 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white/40 border-t border-white/15">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-12 sm:mb-16 animate-enter animate-delay-1">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+                <div className="text-center mb-8 sm:mb-10 animate-enter animate-delay-1">
+                    <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
                         Nuestros Servicios
                     </h2>
-                    <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
                         Soluciones completas para la instalación y reparación de membranas impermeabilizantes
                     </p>
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         return (
                             <div
                                 key={index}
-                                className={`bg-white/92 backdrop-blur-sm border border-white/35 rounded-xl p-5 sm:p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 group cursor-pointer hover:border-accent/70 hover:shadow-[0_18px_40px_-18px_rgba(234,106,42,0.65)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
+                                className={`relative overflow-hidden rounded-2xl card border border-slate-200/80 bg-white p-5 sm:p-6 shadow-[0_14px_30px_-20px_rgba(15,35,55,0.35)] transition-all duration-300 group cursor-pointer hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_24px_50px_-24px_rgba(15,35,55,0.45)] ${index % 2 === 0 ? 'animate-enter-left' : 'animate-enter-right'} ${index === 0 ? 'animate-delay-1' : index === 1 ? 'animate-delay-2' : index === 2 ? 'animate-delay-3' : 'animate-delay-4'}`}
                             >
+                                <div className="mb-4 h-1.5 w-16 rounded-full bg-accent/90"></div>
                                 {service.image ? (
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="mb-4 h-36 sm:h-32 lg:h-36 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="mb-4 h-36 sm:h-36 lg:h-36 w-full rounded-xl object-cover ring-1 ring-slate-200 transition-transform duration-500 group-hover:scale-[1.03]"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                 ) : (
-                                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 ring-1 ring-accent/15 group-hover:bg-accent/20 transition">
                                         <Icon className="text-accent" size={24} />
                                     </div>
                                 )}
 
                                 {/* Title */}
-                                <h3 className="text-lg font-bold text-primary mb-3">
+                                <h3 className="text-lg font-bold text-primary mb-3 leading-tight">
                                     {service.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-slate-600 text-sm mb-4">
+                                <p className="text-slate-600 text-sm mb-4 leading-6">
                                     {service.description}
                                 </p>
 
@@ -101,7 +102,7 @@ const Servicios = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center mt-10 sm:mt-12 animate-enter animate-delay-2">
+                <div className="text-center mt-6 sm:mt-8 animate-enter animate-delay-2">
                     <a
                         href="#contacto"
                         className="inline-block bg-accent hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition"

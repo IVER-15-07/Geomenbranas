@@ -91,24 +91,24 @@ export function Navbar() {
   }, [])
 
   const getDesktopLinkClass = (id) =>
-    `rounded-md px-3 py-1.5 text-sm font-semibold transition ${
+    `rounded-md px-3 py-1 text-sm font-semibold leading-none transition ${
       activeSection === id
         ? 'bg-white/16 text-white shadow-sm'
-        : 'text-white/85 hover:bg-white/10 hover:text-white'
+        : 'text-white/90 hover:bg-white/10 hover:text-white'
     }`
 
   const getMobileLinkClass = (id) =>
-    `block rounded-md px-3 py-2 text-sm font-medium transition ${
+    `block rounded-md px-3 py-2 text-sm font-medium leading-none transition ${
       activeSection === id
         ? 'bg-white/16 text-white'
-        : 'text-white/85 hover:bg-white/10 hover:text-white'
+        : 'text-white/90 hover:bg-white/10 hover:text-white'
     }`
 
   const isAboutActive = aboutLinks.some((link) => link.id === activeSection)
 
   return (
-    <header className="fixed top-0 w-full bg-[#12395b]/88 border-b border-white/15 backdrop-blur-md z-50 shadow-lg shadow-[#091b2a]/30">
-      <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8 py-3 flex items-center justify-between gap-3">
+    <header className="fixed top-0 w-full bg-[#0b2b45] border-b border-white/10 backdrop-blur-md z-50 shadow-sm">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8 py-2 flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="w-10 h-10 bg-[#e9783b] rounded-lg flex items-center justify-center shrink-0">
@@ -133,10 +133,10 @@ export function Navbar() {
           <div ref={aboutMenuRef} className="relative">
             <button
               type="button"
-              className={`rounded-md px-3 py-1.5 text-sm font-semibold transition inline-flex items-center gap-1 ${
+              className={`rounded-md px-3 py-1 text-sm font-semibold leading-none transition inline-flex items-center gap-1 ${
                 isAboutActive
                   ? 'bg-white/16 text-white shadow-sm'
-                  : 'text-white/85 hover:bg-white/10 hover:text-white'
+                  : 'text-white/90 hover:bg-white/10 hover:text-white'
               }`}
               aria-haspopup="true"
               aria-expanded={isAboutMenuOpen}
@@ -146,7 +146,7 @@ export function Navbar() {
               <ChevronDown size={16} className={isAboutMenuOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
             </button>
 
-            <div className={`${isAboutMenuOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'} absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-white/20 bg-[#12395b] p-2 shadow-lg transition`}>
+            <div className={`${isAboutMenuOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'} absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-white/20 bg-[#0b2b45] p-2 shadow-md transition`}>
               {aboutLinks.map((link) => (
                 <a
                   key={link.id}
@@ -187,7 +187,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-white/15 bg-[#12395b]">
+        <div className="lg:hidden border-t border-white/15 bg-[#0b2b45]">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
@@ -204,7 +204,7 @@ export function Navbar() {
             ))}
 
             <details className="rounded-md border border-white/15 bg-white/5">
-              <summary className="cursor-pointer list-none px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 rounded-md flex items-center justify-between">
+              <summary className="cursor-pointer list-none px-3 py-1.5 text-sm font-medium text-white/90 hover:bg-white/10 rounded-md flex items-center justify-between">
                 <span>Nosotros</span>
                 <ChevronDown size={16} />
               </summary>
