@@ -111,10 +111,10 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8 py-2 flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <div className="w-10 h-10 bg-[#e9783b] rounded-lg flex items-center justify-center shrink-0">
-            <span className="text-white font-extrabold text-sm">GM</span>
+          <div className="bg-[#e9783b] rounded-lg flex items-center justify-center shrink-0 px-3 py-2">
+            <span className="text-white font-extrabold text-xs sm:text-sm whitespace-nowrap">GEOMENBRANAS</span>
           </div>
-          <span className="text-white font-bold text-sm sm:text-base lg:text-lg truncate">SOLUCIONES MUÑOZ</span>
+          <span className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg">SOLUCIONES MUÑOZ</span>
         </div>
 
         {/* Desktop Navigation */}
